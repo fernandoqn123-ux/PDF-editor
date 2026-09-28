@@ -1,0 +1,158 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Editor de PDF</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PDF.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
+    </script>
+
+    <!-- pdf-lib -->
+    <script
+        src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js">
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Editor de PDF</h1>
+
+        <p>
+            Abra um PDF, selecione um texto existente e edite seu conteúdo.
+        </p>
+
+    </header>
+
+
+    <div class="toolbar">
+
+        <label class="file-label">
+
+            Abrir PDF
+
+            <input
+                id="fileInput"
+                type="file"
+                accept="application/pdf"
+            >
+
+        </label>
+
+
+        <div
+            id="controls"
+            class="controls"
+        >
+
+            <button id="prevBtn">
+                ◀ Página
+            </button>
+
+            <button id="nextBtn">
+                Página ▶
+            </button>
+
+
+            <label>
+
+                Texto:
+
+                <input
+                    id="textInput"
+                    type="text"
+                    value="Novo nome"
+                >
+
+            </label>
+
+
+            <label>
+
+                Nome do arquivo:
+
+                <input
+                    id="fileNameInput"
+                    type="text"
+                    value="documento_editado"
+                >
+
+            </label>
+
+
+            <button
+                id="downloadBtn"
+                class="primary"
+            >
+                Baixar PDF
+            </button>
+
+
+            <span
+                id="pageInfo"
+                class="page-info"
+            ></span>
+
+        </div>
+
+    </div>
+
+
+    <main class="workspace">
+
+        <div
+            id="empty"
+            class="empty"
+        >
+
+            <h2>Nenhum PDF aberto</h2>
+
+            <p>
+                Selecione um arquivo PDF para começar.
+            </p>
+
+        </div>
+
+
+        <div
+            id="help"
+            class="help hidden"
+        >
+
+            <strong>Como editar:</strong>
+
+            clique em um texto existente no PDF e altere seu conteúdo
+            no campo de texto.
+
+            A marcação azul é apenas uma indicação do texto selecionado
+            e não aparece no PDF final.
+
+        </div>
+
+
+        <div id="pages"></div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

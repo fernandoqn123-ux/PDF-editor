@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #eeeeee;
+    color: #222222;
+}
+
+header {
+    background: #222222;
+    color: white;
+
+    padding: 18px 24px;
+
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 6px;
+
+    font-size: 24px;
+}
+
+header p {
+    margin: 0;
+
+    color: #cccccc;
+
+    font-size: 14px;
+}
+
+.toolbar {
+    background: white;
+
+    border-bottom: 1px solid #cccccc;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+}
+
+button,
+.file-label {
+    border: 0;
+
+    border-radius: 6px;
+
+    padding: 10px 14px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    background: #333333;
+    color: white;
+}
+
+button:hover,
+.file-label:hover {
+    background: #555555;
+}
+
+button.primary {
+    background: #1769aa;
+}
+
+button.primary:hover {
+    background: #12578c;
+}
+
+button.danger {
+    background: #b3261e;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="text"],
+input[type="number"] {
+    border: 1px solid #bbbbbb;
+
+    border-radius: 5px;
+
+    padding: 8px;
+
+    font-size: 14px;
+}
+
+input[type="number"] {
+    width: 70px;
+}
+
+input[type="color"] {
+    width: 44px;
+    height: 36px;
+
+    padding: 2px;
+
+    border: 1px solid #bbbbbb;
+
+    border-radius: 5px;
+}
+
+.controls {
+    display: none;
+
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+.page-info {
+    margin-left: auto;
+
+    font-size: 14px;
+}
+
+.workspace {
+    min-height: calc(100vh - 120px);
+
+    padding: 25px;
+
+    overflow: auto;
+}
+
+.empty {
+    max-width: 600px;
+
+    margin: 80px auto;
+
+    text-align: center;
+
+    color: #666666;
+}
+
+.empty h2 {
+    color: #333333;
+}
+
+.help {
+    width: min(900px, 100%);
+
+    margin: 0 auto 20px;
+
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    padding: 12px 15px;
+
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.pdf-page {
+    position: relative;
+
+    margin: 0 auto 25px;
+
+    background: white;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+
+    width: fit-content;
+}
+
+.pdf-page canvas {
+    display: block;
+}
+
+.editor-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    cursor: crosshair;
+}
+
+.text-item {
+    position: absolute;
+
+    border: 1px dashed #1769aa;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    padding: 2px 4px;
+
+    min-width: 20px;
+
+    cursor: move;
+
+    user-select: none;
+
+    white-space: nowrap;
+}
+
+.text-item.selected {
+    border: 2px solid #1769aa;
+}
+
+.text-item .delete {
+    position: absolute;
+
+    right: -9px;
+    top: -12px;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    padding: 0;
+
+    background: #b3261e;
+
+    color: white;
+
+    font-size: 12px;
+
+    line-height: 20px;
+
+    display: none;
+}
+
+.text-item.selected .delete {
+    display: block;
+}
+
+@media (max-width: 700px) {
+
+    .page-info {
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+    .workspace {
+        padding: 10px;
+    }
+}
+
